@@ -86,6 +86,12 @@ function hello(name:string): string{
 const sss = hello('aaa')
 console.log(sss);
 
+const testFunc = (a:string):string => {
+    return `dsad`;
+}
+
+console.log(testFunc('ads'));
+
 function add(...nums: number[]){
     nums.forEach((num) => {
         console.log(num);
@@ -93,3 +99,41 @@ function add(...nums: number[]){
 }
 
 add(1,2,3,4);
+
+// 리터럴
+type Job = "police" | "developer" | "teacher";
+
+interface User{
+    name : string,
+    job : Job;
+}
+
+const u : User = {
+    name : "yoon",
+    job : "developer"
+}
+
+// 제네릭
+
+function getSize<T>(arr : T[]) : number{
+    return arr.length;
+}
+
+const arr1 = [1,2,3];
+getSize(arr1);
+
+const arr2 = ['a','b','c'];
+getSize(arr2);
+
+interface Mobile<T> {
+    name : string,
+    price : number,
+    choice : string
+}
+
+const mobile : Mobile<string> = {
+    name : "item",
+    price : 10000,
+    choice : "no option"
+}
+
